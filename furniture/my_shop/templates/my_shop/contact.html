@@ -1,0 +1,42 @@
+<!-- templates/my_shop/contact.html -->
+{% extends 'my_shop/base.html' %}
+{% load static %}
+
+{% block title %}Contact Us | Vintage Fur{% endblock %}
+
+{% block content %}
+<div class="contact_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="contact_text">CONTACT US</h1>
+        <form method="POST" class="mail_sectin">
+          {% csrf_token %}
+          <input type="text" class="email-bt" placeholder="Name" name="name" value="{{ form.name.value|default:'' }}">
+          {% if form.name.errors %}<p style="color:red">{{ form.name.errors.0 }}</p>{% endif %}
+
+          <input type="email" class="email-bt" placeholder="Email" name="email" value="{{ form.email.value|default:'' }}">
+          {% if form.email.errors %}<p style="color:red">{{ form.email.errors.0 }}</p>{% endif %}
+
+          <input type="text" class="email-bt" placeholder="Phone Number" name="phone_number" value="{{ form.phone_number.value|default:'' }}">
+          {% if form.phone_number.errors %}<p style="color:red">{{ form.phone_number.errors.0 }}</p>{% endif %}
+
+          <textarea class="massage-bt" placeholder="Message" rows="5" name="message">{{ form.message.value|default:'' }}</textarea>
+          {% if form.message.errors %}<p style="color:red">{{ form.message.errors.0 }}</p>{% endif %}
+
+          <div class="send_bt"><button type="submit">SEND</button></div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div class="map_main">
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France"
+              width="600" height="500" frameborder="0" style="border:0; width: 100%;" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

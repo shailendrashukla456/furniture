@@ -1,0 +1,41 @@
+<!-- templates/my_shop/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Vintage Fur{% endblock %}</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  </head>
+  <body>
+    {% include 'my_shop/header.html' %}
+     
+    {% block content %}{% endblock %}
+
+    {% block about %}{% endblock %}
+
+    {% block clients %}{% endblock %}
+    {% block products %}{% endblock %}
+    {% block projects %}{% endblock %}
+    {% block services %}{% endblock %}
+    {% include 'my_shop/footer.html' %}
+
+    <!-- JS Files -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+    <script src="{% static 'js/plugin.js' %}"></script>
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+  </body>
+</html>
